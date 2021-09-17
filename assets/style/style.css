@@ -626,7 +626,7 @@ body {
 	}
 
 	#content.hide {
-		bottom: -500px !important;
+		bottom: -440px !important;
 	}
 
 	#content.hide #box-control .hide-btn {
@@ -667,6 +667,42 @@ body {
 	.container.info-mode #map-page #content {
 		transform: translateY(400px);
 		opacity: 0;
+	}
+
+	.info-content {
+		flex-wrap: wrap;
+		margin-top: 40px;
+	}
+
+	.chart-content {
+		height: 265px;
+	}
+
+	.chart-content #chart {
+		width: 365px;
+		max-height: 260px !important;
+	}
+
+	.detail-content {
+		width: 100%;
+	}
+
+	.num-info {
+		justify-content: center;
+	}
+
+	.detail-content .head-title {
+		text-align: center;
+	}
+
+	#content .filter-box {
+		margin-top: unset !important;
+	}
+
+	#content.hide .filter-box .search-box,
+	#content.hide .filter-box .select-box {
+		transform: translateY(0px);
+		opacity: 1;
 	}
 }
 

@@ -188,10 +188,13 @@ function setLineChart() {
 						display: true,
 						color: "#d4ecdd",
 						font: {
-							size: 23,
+							size: 16,
 						},
 					},
 					labels: {
+						font: {
+							size: 9,
+						},
 						color: "#d4ecdd",
 					},
 				},
@@ -536,6 +539,12 @@ function setInfoCase() {
 		die: data_die[data_die.length - 1],
 		recover: data_recover[data_recover.length - 1],
 	};
+
+	data_label = ["Apr 2021", "Mey 2021", "Jun 2021", "Jul 2021", "Aug 2021", "Sep 2021"];
+	data_confirm = [41618, 46738, 47638, 48871, 49672, 48882];
+	data_recover = [33512, 34425, 34878, 38733, 39373, 40736];
+	data_die = [3512, 2425, 2878, 1733, 2373, 1736];
+	chart_text = "Bulan";
 
 	let el = infoCase(data);
 
