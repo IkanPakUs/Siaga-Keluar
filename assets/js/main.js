@@ -515,6 +515,11 @@ function getDetail() {
 }
 
 function getDetailFromMap() {
+	if ($("#content").hasClass("hide")) {
+		$("#content").addClass("show");
+		$("#content").removeClass("hide");
+	}
+
 	if (!$(".detail-page").length) {
 		let target_place = data[0];
 		let el = detailPage(target_place);
