@@ -105,6 +105,7 @@ function setMap() {
 		center: [-8.799147001375449, 115.16167526768629],
 		zoom: 17,
 		zoomControl: false,
+		gestureHandling: true,
 	});
 
 	data.forEach((v) => {
