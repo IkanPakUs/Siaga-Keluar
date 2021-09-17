@@ -616,7 +616,7 @@ body {
 @media (max-width: 510px) {
 	#content {
 		left: 0px !important;
-		bottom: 0px !important;
+		bottom: -5px !important;
 		top: unset;
 		width: 100%;
 	}
@@ -626,11 +626,12 @@ body {
 	}
 
 	#content.hide {
-		bottom: -440px !important;
+		bottom: -450px !important;
 	}
 
-	#content.hide #box-control .hide-btn {
-		transform: rotate(90deg);
+	#content.hide #box-control .hide-btn,
+	#content.hide #box-control .menu-btn {
+		display: none;
 	}
 
 	#box-control .hide-btn {
@@ -697,6 +698,10 @@ body {
 
 	#content .filter-box {
 		margin-top: unset !important;
+	}
+
+	#content.hide .filter-box {
+		margin-top: 40px !important;
 	}
 
 	#content.hide .filter-box .search-box,

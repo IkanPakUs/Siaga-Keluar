@@ -89,10 +89,6 @@ const menu = $(".container");
 
 // ------ Startup Function ------ //
 $(document).ready(() => {
-	// setLineChart();
-	// chartButtonFUnc();
-	// setInfoCase();
-
 	mainPage();
 });
 
