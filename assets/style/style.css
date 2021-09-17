@@ -15,7 +15,7 @@ body {
 	scroll-behavior: smooth;
 	font-family: Arial, "Glory", sans-serif;
 	color: var(--contras-color);
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 /* Map Page */
@@ -614,6 +614,10 @@ body {
 /* Responsive Css */
 
 @media (max-width: 510px) {
+	#info-page {
+		height: 100vh;
+	}
+
 	#content {
 		left: 0px !important;
 		bottom: -5px !important;
