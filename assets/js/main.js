@@ -416,6 +416,7 @@ function upButtonFunc() {
 		setTimeout(() => {
 			menu.removeClass("animate");
 			setTimeout(() => {
+				$("body").css({ overflow: "hidden" });
 				$("#info-page").detach();
 			}, 400);
 		}, 300);
@@ -500,6 +501,7 @@ function getInfoPage() {
 		menu.addClass("info-mode");
 		menu.removeClass("animate");
 
+		$("body").css({ overflow: "visible" });
 		setTimeout(() => {
 			$("#map-page").detach();
 		}, 500);
