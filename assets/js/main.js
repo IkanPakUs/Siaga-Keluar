@@ -1,5 +1,5 @@
 // ------ Import Components ------ //
-import { mapPage, infoPage, infoCase, detailPage, list } from "./Components/page.js";
+import { mapPage, infoPage, newsPage, infoCase, detailPage, list } from "./Components/page.js";
 
 // ****** Global Variable ****** //
 
@@ -88,13 +88,32 @@ let line_chart;
 const menu = $(".container");
 
 // ------ Startup Function ------ //
-$(document).ready(() => {
+$(window).on("load", function () {
+	preLoad();
 	mainPage();
 });
 
 // ****** Function ****** ///
 
 // ------ Map Function ------- //
+
+function preLoad() {
+	Pace.on("done", function () {
+		$("#preloader")
+			.delay(1000)
+			.animate({ top: "-120%" }, 2000, $.bez([0.19, 1, 0.22, 1]));
+
+		setTimeout(() => {
+			animate();
+		}, 1000);
+	});
+}
+
+function animate() {
+	setTimeout(() => {
+		menu.removeClass("animate");
+	}, 100);
+}
 
 function setMap() {
 	leaf_map = L.map("map", {
@@ -381,6 +400,12 @@ function statsButtonFunc() {
 	});
 }
 
+function newsButtonFunc() {
+	$(".news a").on("click", function () {
+		getNewsPage();
+	});
+}
+
 function upButtonFunc() {
 	$(".up-btn").on("click", function () {
 		mainPage();
@@ -395,9 +420,24 @@ function upButtonFunc() {
 			}, 400);
 		}, 300);
 	});
+
+	$(".up-btn-news").on("click", function () {
+		mainPage();
+
+		menu.addClass("animate");
+		menu.removeClass("news-mode");
+
+		setTimeout(() => {
+			menu.removeClass("animate");
+			setTimeout(() => {
+				$("body").css({ overflow: "hidden" });
+				$("#news-page").detach();
+			}, 400);
+		}, 300);
+	});
 }
 
-function chartButtonFUnc() {
+function chartButtonFunc() {
 	$(".box").on("click", function () {
 		$(".box").removeClass("active");
 
@@ -445,6 +485,7 @@ function mainPage() {
 	selectFilter();
 	hideButton();
 	statsButtonFunc();
+	newsButtonFunc();
 	menuButtonFunc();
 	setList();
 }
@@ -467,7 +508,26 @@ function getInfoPage() {
 	setInfoCase();
 	setLineChart();
 	upButtonFunc();
-	chartButtonFUnc();
+	chartButtonFunc();
+}
+
+function getNewsPage() {
+	menu.addClass("animate");
+
+	let page = newsPage;
+	menu.append(page);
+
+	setTimeout(() => {
+		menu.addClass("news-mode");
+		menu.removeClass("animate");
+
+		$("body").css({ overflow: "visible" });
+		setTimeout(() => {
+			$("#map-page").detach();
+		}, 500);
+	}, 300);
+
+	upButtonFunc();
 }
 
 function setList() {
