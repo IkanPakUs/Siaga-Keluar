@@ -494,7 +494,7 @@ body {
 
 #info-page {
 	background-color: var(--primary-color);
-	height: 110vh;
+	height: 100vh;
 	width: 100%;
 	z-index: 2000;
 	transform: translateY(100vh);
@@ -766,7 +766,7 @@ body {
 
 @media (max-width: 510px) {
 	#info-page {
-		height: 100vh;
+		height: 120vh;
 	}
 
 	#content {
