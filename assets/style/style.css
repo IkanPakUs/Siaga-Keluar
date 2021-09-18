@@ -494,7 +494,7 @@ body {
 
 #info-page {
 	background-color: var(--primary-color);
-	height: 100vh;
+	height: 110vh;
 	width: 100%;
 	z-index: 2000;
 	transform: translateY(100vh);
@@ -835,7 +835,7 @@ body {
 	}
 
 	.chart-content #chart {
-		width: 365px;
+		max-width: 365px;
 		max-height: 260px !important;
 	}
 
@@ -878,7 +878,12 @@ body {
 	}
 
 	.latest-news .news-image {
+		width: auto;
 		max-width: 325px;
+	}
+
+	.latest-news .news-image img {
+		top: 20px;
 	}
 
 	.latest-news .news-head .date-time small {
@@ -909,6 +914,12 @@ body {
 
 	.bottom-latest .news .news-image {
 		width: 100%;
+	}
+}
+
+@media (max-width: 420px) {
+	.chart-content #chart {
+		max-width: 400px;
 	}
 }
 
